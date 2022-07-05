@@ -9,4 +9,4 @@ Fees will be added to the liquidity pool
 
 Proportional drawdown model (old)
 
-Constant step down model with 1e18 lot size
+Constant step down model with 1e18 lot size, automated market marker (new)
