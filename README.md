@@ -7,4 +7,6 @@ Default fee to 0.1%
 
 Fees will be added to the liquidity pool
 
-Proportional drawdown model
+Proportional drawdown model (old)
+
+Constant step down model with 1e18 lot size
