@@ -1,5 +1,7 @@
 pragma solidity>0.8.0;//SPDX-License-Identifier:None
+
 interface IERC20{function transferFrom(address,address,uint)external;}
+
 contract Swap_93N{
     uint public fee=9999; //Divide by 10000 to return 99.9%
     address private _owner;
