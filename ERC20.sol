@@ -2,20 +2,18 @@ pragma solidity>0.8.0;//SPDX-License-Identifier:None
 contract ERC20AC{
     event Transfer(address indexed from,address indexed to,uint value);
     event Approval(address indexed owner,address indexed spender,uint value);
-    mapping(address=>mapping(address=>uint))internal _allowances;
-    mapping(address=>uint)internal _balances;
-    uint internal _totalSupply;
-    address internal _owner;
-    string private _name;
-    string private _sym;
-    constructor(string memory name_,string memory sym_){
-        (_owner,_name,_sym)=(msg.sender,name_,sym_);
+    mapping(address=>mapping(address=>uint))private _allowances;
+    mapping(address=>uint)private _balances;
+    uint private _totalSupply;
+    constructor(){
+        _balances[msg.sender]=_totalSupply=1e25;
+        emit Transfer(address(this),msg.sender,_totalSupply);
     }
-    function name()external view returns(string memory){
-        return _name;
+    function name()external pure returns(string memory){
+        return "USD Tether";
     }
-    function symbol()external view returns(string memory){
-        return _sym;
+    function symbol()external pure returns(string memory){
+        return "USDT";
     }
     function decimals()external pure returns(uint){
         return 18;
